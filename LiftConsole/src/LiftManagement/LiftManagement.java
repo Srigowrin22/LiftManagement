@@ -8,6 +8,7 @@ public class LiftManagement {
 	
 	private static LiftManagement liftmanagement;
 	
+	private LiftManagement() {} 
 	
 	public static LiftManagement getInstance() {
 		if (liftmanagement == null) {

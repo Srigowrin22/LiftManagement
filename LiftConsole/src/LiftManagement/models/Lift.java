@@ -7,20 +7,17 @@ import java.util.List;
 public class Lift {
 	
 	static int var = 1;
+	static int capacity = 0;
 	private String name;
     private int currentPosition;
+    private int startPosition;
     private int targetPosition;
-    private String status;  // "stationary", "moving"
-    private String direction;  // "up", "down", or "none"
-//    private List<Integer> floors;
+    private int totalCapacity = -1;
 
-    public Lift() {
-    	this.name = name;
-        this.currentPosition = 0;  
-        this.targetPosition = 0;
-        this.status = "stationary";
-        this.direction = "none";
-//        this.floors = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ));  
+	public Lift() {
+        this.currentPosition = 0; 
+        this.startPosition = 0;
+        this.targetPosition = 10;
     }
 
     public void setName() {
@@ -30,6 +27,7 @@ public class Lift {
     public String getName() {
     	return name;
     }
+    
     public int getCurrentPosition() {
         return currentPosition;
     }
@@ -37,36 +35,36 @@ public class Lift {
     public void setCurrentPosition(int currentPosition) {
         this.currentPosition = currentPosition;
     }
+    
+    public int getStartPosition() {
+        return startPosition;
+    }
+
+    public void setStartPosition(int startPosition) {
+        this.startPosition = startPosition;
+    }
+    
+    public void setTargetPosition(int targetPosition) {
+        this.targetPosition = targetPosition;
+    }
+
+    public static void setCapacity() {
+    	capacity++;
+    }
+    
+    public static int getCapacity() {
+		return capacity;
+	}
 
     public int getTargetPosition() {
         return targetPosition;
     }
+    
+    public int getTotalCapacity() {
+		return totalCapacity;
+	}
 
-    public void setTargetPosition(int targetPosition) {
-        this.targetPosition = targetPosition;
-        this.status = "moving";
-        if (targetPosition > currentPosition) {
-            this.direction = "up";
-        } else {
-            this.direction = "down";
-        }
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public String getDirection() {
-        return direction;
-    }
-
-    public void moveToTarget() {
-        if (status.equals("moving")) {
-            this.currentPosition = targetPosition;
-            this.status = "stationary";
-            this.direction = "none";
-        }
-    }
-
-	
+	public void setTotalCapacity(int totalCapacity) {
+		this.totalCapacity = totalCapacity;
+	}
 }

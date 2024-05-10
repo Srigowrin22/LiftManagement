@@ -6,40 +6,43 @@ import LiftManagement.Datalayer.LiftDatalayer;
 
 public class ManageView {
 	private ManageModel manageModel;
-	
+
 	public static Scanner sc = new Scanner(System.in);
 
 	public ManageView() {
 		manageModel = new ManageModel(this);
 	}
-	
+
 	public void start() {
 		System.out.println("Welcome");
-		while(true) {
+		while (true) {
 			int curr = 0;
 			int dest = 0;
 			String name = "";
 			System.out.println("Enter your choice: ");
-			System.out.println("1.Display Lifts|| 2.Insert Lift || 3.Set positions || 4.Assign lift with currentpos || 5.Choose Lift with direction || 6. Restrict access");
+			System.out.println("1.Display Lifts|| 2.Insert Lift || 3.Set positions || 4.Assign lift with currentpos");
+			System.out.println("5.Choose Lift with direction || 6. Restrict access || 7.Least Stops || 8.Capacity || 9.Block Lift ");
 			int choice = sc.nextInt();
-			switch(choice) {
+			switch (choice) {
 			case 1:
 				boolean b = LiftDatalayer.getInstance().displayLift();
-				if(b) showAlert("Empty! InsertLifts");
+				if (b)
+					showAlert("Empty! InsertLifts");
 				break;
-			case 2: 
+
+			case 2:
 				init();
-				break;
-				
+				return;
+
 			case 3:
 				sc.nextLine();
 				System.out.println("Enter the lift name: ");
 				name = sc.nextLine();
-				System.out.println("Enter the current position: ");
+				System.out.println("Enter the position: ");
 				int pos = sc.nextInt();
 				manageModel.setPos(name, pos);
 				break;
-				
+
 			case 4:
 				System.out.println("Current Floor: ");
 				curr = sc.nextInt();
@@ -48,7 +51,7 @@ public class ManageView {
 				manageModel.assignCurrent(curr, dest);
 				LiftDatalayer.getInstance().displayLift();
 				break;
-				
+
 			case 5:
 				System.out.println("Current Floor: ");
 				curr = sc.nextInt();
@@ -57,7 +60,7 @@ public class ManageView {
 				manageModel.assignDirect(curr, dest);
 				LiftDatalayer.getInstance().displayLift();
 				break;
-				
+
 			case 6:
 				sc.nextLine();
 				System.out.println("Enter the lift name:");
@@ -68,8 +71,33 @@ public class ManageView {
 				manageModel.restrict(name, from, to);
 				LiftDatalayer.getInstance().displayLift();
 				break;
+
+			case 7:
+				System.out.println("Current Floor: ");
+				curr = sc.nextInt();
+				System.out.println("Destination floor");
+				dest = sc.nextInt();
+				manageModel.leastStops(curr, dest);
+				break;
+
+			case 8:
+				sc.nextLine();
+				System.out.println("Enter the lift name: ");
+				name = sc.nextLine();
+				System.out.println("Set the capacity: ");
+				int capacity = sc.nextInt();
+				manageModel.setCapacity(name, capacity);	
+				break;
 				
-			default: System.out.println("Enter valid choice");
+			case 9:
+				sc.nextLine();
+				System.out.println("Enter the lift name to block: ");
+				name = sc.nextLine();
+				manageModel.blockLift(name);
+				break;
+				
+			default:
+				System.out.println("Enter valid choice");
 			}
 		}
 	}
@@ -81,7 +109,7 @@ public class ManageView {
 		manageModel.setLift(number);
 		start();
 	}
-	
+
 	public void showAlert(String alert) {
 		System.out.println(alert);
 	}

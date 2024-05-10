@@ -49,4 +49,25 @@ public class ManageModel {
 		}
 		
 	}
+
+	public void leastStops(int curr, int dest) {
+		String alert = LiftDatalayer.getInstance().leastStops(curr, dest);
+		manageView.showAlert(alert + " is assigned");	
+	}
+
+	public void blockLift(String name) {
+		if(LiftDatalayer.getInstance().blockLift(name)) {
+			manageView.showAlert(name + " BLOCKED!! Lift is under maintainance!!");
+		}else {
+			manageView.showAlert("Lift Not found");
+		}		
+	}
+
+	public void setCapacity(String name, int capacity) {
+		if(LiftDatalayer.getInstance().setCapacity(name, capacity)) {
+			manageView.showAlert(name + " Capacity is set! ");
+		}else {
+			manageView.showAlert("Lift Not found");
+		}
+	}
 }
