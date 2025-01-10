@@ -25,6 +25,29 @@ This Lift Management Console Application was developed as part of a skill test f
 - **Singleton Design Pattern**
 - **Console-based User Interface**
 
+## MODEL: <br> 
+<img width="336" alt="image" src="https://github.com/user-attachments/assets/12fb059c-0f92-4fe3-912c-56ca259d3729" />
+
+## Screenshots -<br>
+### 1. Display <br>
+![Screenshot 2025-01-10 213435](https://github.com/user-attachments/assets/7c589188-7fe2-444e-818e-b2b203fa8241)
+### 2. Addition of lifts <br>
+![Screenshot 2025-01-10 213649](https://github.com/user-attachments/assets/fdc0c6ed-6cb5-4279-b754-a62ea2aea3a9)
+### 3. Set default position to lifts <br>
+![Screenshot 2025-01-10 213712](https://github.com/user-attachments/assets/f5be1d41-42ef-4b89-94f7-bbd1252e8e09)
+### 4. Choose lifts with current position <br>
+![Screenshot 2025-01-10 213805](https://github.com/user-attachments/assets/285c2498-4620-4e1e-8bd8-081062a3eb45)
+### 5. Choose lifts with upward or downward direction <br>
+![Screenshot 2025-01-10 213852](https://github.com/user-attachments/assets/337b7fc4-e393-4ea3-9bcc-2cf904a7dd6a)
+### 6. Restrict lift access <br>
+![Screenshot 2025-01-10 214154](https://github.com/user-attachments/assets/8e0f080d-d00b-486b-8443-b6a641a7d166)
+### 7. Choose lift with least stops <br>
+![Screenshot 2025-01-10 214245](https://github.com/user-attachments/assets/606fd51c-e6ff-4f36-a03a-834ee1a2d5c2)
+### 8. Set capacity <br>
+![Screenshot 2025-01-10 214422](https://github.com/user-attachments/assets/a08f88b3-b2cb-4207-b5e9-20bbc551297a)
+### 9. Block lift access <br>
+![Screenshot 2025-01-10 214625](https://github.com/user-attachments/assets/3d581ad9-dd40-48bd-ae86-c3cd02633144)
+
 ## Usage
 Upon running the program, the console will display the following menu:
 
